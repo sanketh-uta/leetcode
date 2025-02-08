@@ -1,0 +1,16 @@
+1) If asked to find the 2 indices whose sum will be equal to given target and given only 1 solution is definetely possible and elements not sorted
+    we have to use HashMap
+        1) assume that at each iteration one element is that element and calculate complement = target - that element
+        2) see in hashmap if complement exists
+            is exists then bring that index using m.get(complement) and we already know indes of that element(i) so return 
+            if does not exist add that element to the map and also its index;
+
+
+2)twosum if given elements are sorted
+    we can use 2 pointer approach 
+    1) assign left to index 0;
+    2) assign right to index last;
+    3) while left < right calculate the sum a[left] and a[right]
+    4) if sum < target --> left++
+    5) if sum > target --> right--
+    6) if sum == target ---> indices found so return new int[]{left,right}
