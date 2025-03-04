@@ -1,0 +1,16 @@
+Here we are asked to remove the duplicates present in the sorted array in place. so again we can use 2 pointer (slow and fast)
+
+We will maintain a set to make sure we are only adding the element ones in the entire array.
+
+iterate the fast pointer through the array and check if the element at index fast contains in set if it is then continue 
+or if the element is not present in the set insert the element in the set and insert that element in the place of slow index in array
+and update the slow pointer;
+    ex - nums[] = {1,1,2}
+        slow = 0;
+        fast = 0;
+        set ={}
+        iteration-1 --> set does not contain element at fast(i.e, 1) so insert 1 to set set = {1} 
+                        and nums[slow]=nums[0]=1 and make the slow++;
+
+        iteration-2 --> now nums[fast] i.e, 1 is already in the set so continue
+        iteration 3 --> nums[fast] i,e, 2 not in list follow same process as iteration-1.
