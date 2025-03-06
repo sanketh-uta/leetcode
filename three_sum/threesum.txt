@@ -1,0 +1,7 @@
+if asked to find all the triplets in the given array whose sum is 0 and also given not to find the duplicates
+    1) sort the given array
+    2) for every element consider as the possible value 
+    3) remove duplicates by comparing the next value/previous value
+    4) take the negative of that number complement = -nums[i]
+    5) apply the 2 pointer and compare the sum == complement is it is then add to the triplet
+    6) also while traversing remove the duplicates possible for the sum two values in the while 

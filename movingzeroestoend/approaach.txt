@@ -1,0 +1,12 @@
+As we are said to implement in place the approach should be 2 pointer (slow and fast)
+
+consider the slow pointer and fast pointer starting at 0;
+
+iterate over the fast pointer (fast pointer is generally needed to go through all the elements in array/string)
+    and for every non zero element assign that element to the index of slow pointer 
+    and then make the slow pointer pointing to next (i.e, slow++)
+
+Now we have all the non zero elements from index 0 to slow-1 but the elements after that are not still zeros it will be the elemnents 
+in index from length-slow in the original array.
+
+So again iterate over the array from index slow to length-1 and then assign them with 0;

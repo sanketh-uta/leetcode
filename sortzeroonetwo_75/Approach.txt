@@ -1,0 +1,19 @@
+Here we have to move all the 0 to beginning and then all 1 and then all 2.Inplace
+
+Intutuion --> we can just count the number 0 1 2 and update the numbers array using the index numbers. 
+    If you think this way YAY YOUR ARE RIGHT!
+
+Approach --->
+step 1---> In order to maintain the count of 0 1 and 2 take the Map(here we take TreeMap because that will give me in this way 
+    {0:count,1:count:2:count}) in the order I want to insert into an nums array. And by default update all of them have count 0
+    i.e, m.put(0,0), m.put(1,0),m.put(2,0)
+
+step 2---> Now count the number of 0 1 and 2 by iterating over the array and update the Map accordingly.
+
+step 3---> Now start run the loop from 0 to n and update the values based on the index value;
+            if(i<m.get(0))
+            nums[i]=0;
+            else if(i>=m.get(0) && i<(m.get(0)+m.get(1)))
+            nums[i]=1;
+            else
+            nums[i]=2;

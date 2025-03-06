@@ -1,0 +1,23 @@
+Here as we said to find the contiguous subarray average we can use sliding window or 2 pointer with prefix sum
+
+2 pointer with prefix sum
+
+As we have to return the max average we can find the max sum and then at the end return the maxsum/k;
+
+First we calculate the prefix sum nums[i]=nums[i]+nums[i-1] (from array index 1 to nums.length)
+We then assign the first sum with nums[k-1] (remember we have the prefix sums now in nums array)
+we then start from index k and see if that index ending has the sum > first if so update max sum, repeat the same upto nums.length
+
+
+ex -> nums[] = {1,12,-5,-6,50,3}
+
+step 1 --> calculating the prefix sum   
+        from index 1 to n
+            nums[i]+=nums[i-1];
+
+step 2 ---> assigning the max as first subarray of length k; i.e max = nums[k-1] (as we follow 0 indexing)
+step 3 ---> from the next k i.e from k to length of array we have to check the sum of index ending at index k 
+            so for that consider a int p starting at 1 (as from 0 we already have a sum value at max (index k-1))
+            check if the sum of values between index p and k are greater than max by nums[k]-nums[p-1] > max if somupdate max.
+
+step 4 ---> return the max / k;

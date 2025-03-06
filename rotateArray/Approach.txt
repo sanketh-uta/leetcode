@@ -1,0 +1,11 @@
+We have to rotate the array right k no of times.
+
+Intution --> Swap the elements from length-k to end  with the indexes 0 to k-1
+            But now after swapping the elements in the starting part of array will be expected but the elements from nums[k]
+            will be not exactly the way we want i.e, they will not be rotated.
+
+Appraoch --> To rotate the for larger k we can do k % nums.lenhgth as rotating the array of length k with k times will be same as original array
+
+    Then we reverse the entire array from index 0 to length-1; by swapping the numbers [1,2,3,4] --> becomes [4,3,2,1];
+    reverse the first part of array from index 0 to k-1
+    reverse the rest of the array from k to length-1

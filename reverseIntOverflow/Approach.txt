@@ -1,0 +1,29 @@
+In order to calculate the reverse we already know how to do that by using the below code 
+```
+    while(num!=0){
+        // num % 10 gives the last digit
+        rev = rev*10+num%10;
+        num = num/10
+    }
+```
+
+But here the crux of this problem is we have to make sure that the reversed number doesnot overflow the Integer value from both ends that is after reversing we have to make sure that the value lies in between [Integer.MIN_VALUE,Integer.MAX_VALUE].
+
+So what we do is store these in the int variables min and max.
+```
+    int min = Integer.MIN_VALUE;
+    int max = Integer.MAX_VALUE;  //2147483647 
+```
+
+One more observation to make sure is the last digit of the min and max if the reversed integer is equal to the min/10 and max/10 because consider the below example.
+    example - sat the given number is num = 1563847412
+    after few iterations we will have the value of 214748365 for which if we again multiply and 10 and add the last digit will become overflow. So every time we before multiply and add the last digit check for the overflow using the below contions.
+
+```
+    if(rev>max/10 || (rev == max/10 && digit > 7)) 
+    return 0;
+    if(rev<min/10 || (rev == min/10 && digit > 8))
+    return 0;
+```
+
+    The above condition checks if the before multiplying if the rev value overflows if its then return 0.

@@ -1,0 +1,13 @@
+We are supposed to find the container with most water i.e, diagramatically same as calculating the largest area of rectangle.
+
+Intutuion --> As the water should not overflow we have to consider the smallest between 2 endpoints in each iteration
+And as want the area to be max we will use 2 pointer approach 1 starting at the index 0 and other at end of array.
+
+step 1- > we calculate the max using the below formulae
+    max = Math.max(max,(l-r)*Math.min(nums[l],nums[r]))
+
+    And now biggest challenge is how we move the l and r pointer we all know as they start at opposite ends whey need to converge (l<r)
+    but how to update l and r;
+
+   step 2-> simple as we want to keep the tallest tank amongst nums[l] and nums[r] we check if (nums[l]<nums[r]) i.e, 
+    r is taller so we keep r and update l by l++; or else we keep l and update r as r--;
