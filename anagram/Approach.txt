@@ -1,0 +1,42 @@
+# Intuition
+If the number of each character is same in both the strings given then its an anagram. 
+
+# Approach
+In order to find the frequency of Character we use the Map where key is the Character and value is the Integer. So considering to reduce the memory what we do is we first store the frequency of first string s in the map m 
+
+```
+for(int i=0;i<s.length();i++){
+            char ch = s.charAt(i);
+            if(!m.containsKey(ch))
+            m.put(ch,1);
+            else
+            m.put(ch,m.get(ch)+1);
+        }
+```
+    
+and then while iterating over the next string t we reduce the frequency of that character by 1 every time we see a character.
+
+```
+ for(int j=0;j<t.length();j++){
+            char ch = t.charAt(j);
+            if(m.containsKey(ch))
+            m.put(ch,m.get(ch)-1);
+            else
+            return false;
+        }
+```
+
+So that way finally if the map m has the values 0 for all the Character that means bot strings are anagrams. Any integer other than 0 means they are not.
+
+ ```
+for(int v:m.values()){
+            if(v!=0)
+            return false;
+        }
+```
+
+# Complexity
+- Time complexity:
+O(N)
+
+- Space complexity:
