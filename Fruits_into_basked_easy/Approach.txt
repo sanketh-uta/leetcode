@@ -1,0 +1,15 @@
+Intuition
+The basket size should be greater than the no of fruits present. And the basked filled with one type of fruit should not be filled with other type so if we place a fruit in basked at some index j there is no point of checking at that index again.
+
+Approach
+We first take a visited array to keep track of which basked is available to place the fruit. Inititally as all baskets are free fill with false;
+As we have 2 arrays we iterate over the fruits array and basked array and for every fruit array we check the basket at that index is not visited (that means not occupied with other fruit) and basket size is greater or equal to fruits. If so then we can place the fruit and make that basket as visited so as to not place the other fruit there and increment the placed(this will keep track of how many fruits are placed)
+
+By the end of the completion of these loops we have the no of fruits placed. So to find the no of non placed we cn just subtract number of fruits - placed fruits.
+
+Complexity
+Time complexity:
+O(n*m) --> where n is the no of fruits and m is the no of baskets.
+
+Space complexity:
+O(n)

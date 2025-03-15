@@ -1,0 +1,10 @@
+Here the approach is 
+consider 2 variables total = 0 and res = first array element.
+
+iterate over the loop and everytime compare when the total < 0 if yes then make total = 0 because if its negative and if you add 
+the current array element then the sum will always less than the number considered itself.
+
+then add the current index element to total
+compare if the total > res if yes then res = total
+
+Finally the res will have the max sum of the subarray
